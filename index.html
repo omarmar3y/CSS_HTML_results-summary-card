@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @font-face {
+      font-family: 'HankenGrotesk-var';
+      src: url("assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+    }
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      display:flex
+
+    }
+    /* // Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) { 
+    .container{
+      max-width: 550px ;
+      height: 600px;
+    }
+    
+    
+  }
+  @media (max-width: 992px) 
+  {
+    .whole_card{
+      flex-direction: column;
+      width: 600px;
+    }
+    .summary{
+      
+    }
+    
+    .main_card{
+      flex: 1;
+      height: 35% !important ;
+      width: 80% !important;
+    }
+    .summary{
+      flex: 1;
+      width: 100% !important;
+    }
+
+  }
+
+  /* // Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) 
+  { 
+    .container{
+      max-width: 750px ;
+
+    }
+  }
+
+  /* // Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+    .container{
+      max-width: 970px ;
+    }
+  }
+
+  /* // X-Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) { 
+    .container{
+      max-width: 1170px;
+    }
+  }
+
+  /* // XX-Large devices (larger desktops, 1400px and up) */
+  @media (min-width: 1400px) {
+.container{
+  max-width: 1200 ;
+    }
+  }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color:  hsl(228, 45%, 44%); }
+    .whole_card { 
+      font-family: 'HankenGrotesk-var';
+      display: flex;
+      height: 600px;
+      /* width: 60%; */
+      justify-content: center;
+      margin: auto;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .card {
+      display:grid;
+      width: 45%;
+      height: 50%;
+      text-align: center;
+
+    }
+    .main_card {
+      grid-template-rows: 20% 40% 40%;
+      background-color: hsl(228, 45%, 44%);
+      background: linear-gradient(360deg, #312ce9 ,#6743ff);
+      padding: 5%;
+      color:white;
+      border-radius: 5%;
+    }
+
+    .out_of_ten{
+      display: flex;
+      flex-direction: column;
+      width: 120px;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #312ce9 ,#6743ff);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+
+    .number_of_ten {
+      font-size:3em;
+      disply
+    }
+    
+    .ten{
+      transform: translate(0px,-15px);
+
+    }
+    
+    .summary {
+      background-color:white;
+      width: 45%;
+    }
+
+    .result {
+      position: relative;
+      font-weight:bold;
+      font-size: x-large;
+      bottom: -15px;
+    }
+
+    .summary_title{
+      padding-left: 10%;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .summary_text{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2% 10%;
+      border-radius: 10%;
+    }
+
+    .text_reaction{
+      color: #ff5555;
+      margin-left: 10px;
+    }
+
+    .text_memory{
+      color: #ffb21e;
+      margin-left: 10px;
+    }
+
+    .text_verbal{
+      color: #00bb8f;
+      margin-left: 10px;
+    }
+
+    .text_visual{
+      color: #1125d6;
+      margin-left: 10px;
+    }
+
+    .reaction_summary{
+      background-color: #ff555519  ;
+    }
+.memory_summary{
+  background-color: #ffb21e19 ;
+}
+    .verbal_summary{
+      background-color: #00bb8f19 ;
+    }
+    .visual_summary{
+      background-color: #1125d619;
+    }
+
+
+    .summary_img{
+      bottom: -5px;
+      position: relative;
+    }
+    .dis_perc{
+      color: gray;
+
+    }
+
+    .percent_summary{
+      margin-right: 10px;
+    }
+
+    .summary_button{
+    margin: 5% 10%;
+    height: 55%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 25px;
+    
+    position: relative;
+    background-color: #303b59;
+    }
+    .summary_button:hover
+    {
+      background: linear-gradient(360deg, #312ce9 ,#6743ff);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="whole_card">
+  
+      <div class="main_card card">
+        <div class="card_title">
+          Your Result
+        </div>
+        <div class="out_of_ten">
+          <div class=" number_of_ten">
+            76
+          </div>
+          <br>
+        
+          <div class="ten">
+            of 100
+  
+          </div>
+        </div>
+        <div class="text_end_card">
+          <div class="result">
+            Great
+          </div> 
+          <br>
+          You scored higher than 65% of the people who have taken these tests.
+        </div>
+      </div>
+      
+      <div class="summary card ">
+        <div class="summary_title">
+          Summary
+        </div>
+  
+        <div class="reaction_summary summary_text">
+          <div class="text_reaction" > <img src="assets/images/icon-reaction.svg" class="img-reaction summary_img"> Reaction</div>
+          <div class="percent_summary">
+  
+            80 <span class="dis_perc">
+              / 100
+            </span>
+          </div>
+        </div>
+  
+        <div class="memory_summary summary_text">
+          <div class="text_memory"> <img src="assets/images/icon-memory.svg" class="img-memory summary_img"> Memory</div>
+          <div class="percent_summary">
+            92 <span class="dis_perc">
+              / 100
+            </span>
+          </div>
+        </div>
+  
+        <div class="verbal_summary summary_text">
+          <div class="text_verbal"> <img src="assets/images/icon-verbal.svg" class="img-verbal summary_img"> Verbal</div>
+          <div class="percent_summary">
+            61 <span class="dis_perc">
+              / 100
+            </span>
+          </div>
+        </div>
+      
+  
+        <div class="visual_summary  summary_text">
+          <div class="text_visual"> <img src="assets/images/icon-visual.svg" class="img-visual summary_img"> Visual</div>
+          <div class="percent_summary">
+  
+            72 <span class="dis_perc">
+              / 100
+            </span>
+          </div>
+        </div>
+  
+        <div class="summary_button">
+          Continue
+        </div>
+      </div>
+    </div>
+  
+    
+    </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
